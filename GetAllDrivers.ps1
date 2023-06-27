@@ -97,6 +97,6 @@ ForEach($Driver in $DriverArray) {
     
     New-Item -ItemType Directory -Force -Path "$Destination" | Out-Null
     #move-Item -Path "$initDestination\$($Driver.Folder)" -Destination "$Destination" -Force # not working??
-    Copy-Item -Path "$initDestination\$($Driver.Folder)" -Destination "$Destination" -Force
+    Copy-Item -Path "$initDestination\$($Driver.Folder)" -Destination "$Destination" -Force -Recurse
     Remove-Item "$initDestination\$($Driver.Folder)" -Recurse
 }
